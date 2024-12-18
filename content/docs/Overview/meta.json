@@ -1,0 +1,9 @@
+{
+  "title": "Overview",
+  "description": "The big picture",
+  "icon": "Building2",
+  "root": true,
+  "pages": [
+    "index"
+  ]
+}
