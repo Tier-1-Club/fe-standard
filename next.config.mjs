@@ -1,5 +1,12 @@
 import createBundleAnalyzer from "@next/bundle-analyzer";
 import { createMDX } from "fumadocs-mdx/next";
+import { FontaineTransform } from "fontaine";
+
+const fontTaineOptions = {
+  fallbacks: ["BlinkMacSystemFont", "Segoe UI", "Helvetica Neue", "Arial", "Noto Sans"],
+  resolvePath: (id) => `/public/fonts/${id}`,
+  overrideName: () => "Be VietNam Pro Techmely",
+};
 
 const withAnalyzer = createBundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
@@ -11,12 +18,12 @@ const config = {
   output: "export",
   reactStrictMode: true,
   eslint: {
-    // Replaced by root workspace command
     ignoreDuringBuilds: true,
   },
   serverExternalPackages: ["ts-morph", "typescript"],
   experimental: {
     reactCompiler: true,
+    webpackBuildWorker: true,
   },
   images: {
     unoptimized: true,
@@ -27,6 +34,11 @@ const config = {
         port: "",
       },
     ],
+  },
+  webpack(config) {
+    config.plugins = config.plugins || [];
+    config.plugins.push(FontaineTransform.webpack(fontTaineOptions));
+    return config;
   },
 };
 

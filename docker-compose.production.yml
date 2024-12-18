@@ -1,0 +1,11 @@
+name: tier1club
+
+services:
+  handbook:
+    image: registry.gitlab.com/tier1club/frontend:0.0.1
+    network_mode: bridge
+    environment:
+      - NODE_ENV=production
+      - PORT=${PORT}
+    ports:
+      - "${PORT}:${PORT}"

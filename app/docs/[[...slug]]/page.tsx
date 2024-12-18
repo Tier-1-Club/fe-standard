@@ -1,4 +1,4 @@
-import { source } from '@/lib/source';
+import { source } from '@/modules/docs/source';
 import {
   DocsPage,
   DocsBody,
@@ -7,6 +7,9 @@ import {
 } from 'fumadocs-ui/page';
 import { notFound } from 'next/navigation';
 import defaultMdxComponents from 'fumadocs-ui/mdx';
+
+export const dynamicParams = false;
+export const revalidate = false;
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
