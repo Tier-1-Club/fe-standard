@@ -6,6 +6,7 @@ import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import sonarQubeJs from 'eslint-plugin-sonarjs';
 import unicorn from 'eslint-plugin-unicorn';
 import typescriptEslint from 'typescript-eslint';
+import oxlint from 'eslint-plugin-oxlint';
 
 export default typescriptEslint.config(
   {
@@ -18,7 +19,13 @@ export default typescriptEslint.config(
       '**/public',
       '**/.coverage',
       '**/*.d.ts',
-      '.github/**/*'
+      '.github/**/*',
+      '.eslintcache',
+      '.source/**/*',
+      'next.config.mjs',
+      'postcss.config.js',
+      'tailwind.config.js',
+      'eslint.config.mjs',
     ],
   },
   {
