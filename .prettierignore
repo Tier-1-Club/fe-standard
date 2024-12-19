@@ -1,0 +1,9 @@
+bun.lock
+test-results
+.next
+out
+dist
+.github
+storybook-static
+public
+coverage

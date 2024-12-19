@@ -1,4 +1,4 @@
-import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
+import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared"
 
 /**
  * Shared layout configurations
@@ -8,15 +8,15 @@ import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
  * Docs Layout: app/docs/layout.tsx
  */
 export const baseOptions: BaseLayoutProps = {
-	nav: {
-		title: 'Frontend Tier 1',
-		transparentMode: 'top'
-	},
-	links: [
-		{
-			text: 'Overview',
-					url: '/docs/overview',
-			active: 'nested-url'
-		}
-	]
-};
+  nav: {
+    title: "Frontend Tier 1",
+    transparentMode: "top"
+  },
+  links: [
+    {
+      text: "Overview",
+      url: "/docs/overview",
+      active: "nested-url"
+    }
+  ]
+}
