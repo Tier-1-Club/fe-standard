@@ -1,0 +1,21 @@
+{
+    "title": "Web",
+    "description": "The big picture",
+    "icon": "Building2",
+    "root": true,
+    "pages": [
+      "standard",
+      "build",
+      "css-architecture",
+      "deployment",
+      "package-manager",
+      "performance",
+      "security",
+      "testing",
+      "ui-ux",
+      "seo",
+       "3D",
+       "interview-tips"
+    ]
+  }
+  
