@@ -5,15 +5,13 @@ import { RootProvider } from 'fumadocs-ui/provider';
 import type { ReactNode } from 'react';
 
 export function AppProvider({
-  children,
+	children
 }: {
-  children: ReactNode;
+	children: ReactNode;
 }): React.ReactElement {
-  return (
-    <RootProvider>
-      <TooltipProvider>
-        {children}
-      </TooltipProvider>
-    </RootProvider>
-  );
+	return (
+		<RootProvider>
+			<TooltipProvider>{children}</TooltipProvider>
+		</RootProvider>
+	);
 }

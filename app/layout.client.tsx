@@ -2,7 +2,8 @@
 
 import { useParams } from 'next/navigation';
 import type { ReactNode } from 'react';
-import { cn } from '@/lib/cn';
+
+import { cn } from '@/shared/library/cn';
 
 export function useMode(): string | undefined {
   const { slug } = useParams();
