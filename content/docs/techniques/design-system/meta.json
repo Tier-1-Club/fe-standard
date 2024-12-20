@@ -1,0 +1,10 @@
+{
+    "title": "Design System",
+    "description": "How we build our design system",
+    "icon": "Building2",
+    "root": true,
+    "pages": [
+      "index"
+    ]
+  }
+  

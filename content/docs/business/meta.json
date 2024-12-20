@@ -1,6 +1,6 @@
 {
-  "title": "Leadership",
-  "description": "The big picture",
+  "title": "Business",
+  "description": "How we run our business",
   "icon": "Building2",
   "root": true,
   "pages": ["index"]

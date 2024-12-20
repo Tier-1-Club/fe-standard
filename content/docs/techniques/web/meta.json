@@ -2,8 +2,8 @@
     "title": "Web",
     "description": "The big picture",
     "icon": "Building2",
-    "root": true,
     "pages": [
+      "index",
       "standard",
       "build",
       "css-architecture",

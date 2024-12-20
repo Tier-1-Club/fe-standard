@@ -1,6 +1,6 @@
 {
   "title": "Finance",
-  "description": "The big picture",
+  "description": "How we make money",
   "icon": "Building2",
   "root": true,
   "pages": ["index"]

@@ -1,12 +1,14 @@
 {
   "title": "Techniques",
-  "description": "The big picture",
+  "description": "Web/Mobile/App/AI Techniques",
   "icon": "Building2",
   "root": true,
   "pages": [
-    "---Guide---",
     "index",
-    "Documentation",
+    "web",
+    "mobile",
+    "vision-os",
+    "design-system",
     "..."
   ]
 }

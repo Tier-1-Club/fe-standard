@@ -1,6 +1,6 @@
 {
   "title": "Health",
-  "description": "The big picture",
+  "description": "Health is the foundation of everything",
   "icon": "Building2",
   "root": true,
   "pages": ["index"]
