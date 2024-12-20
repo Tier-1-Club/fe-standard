@@ -33,6 +33,16 @@
     "suspend",
     "streaming-ssr",
     "selective-hyration",
-    "multi-threading"
+    "multi-threading",
+    "batching-requests",
+    "resource-prioritization",
+    "http-cache",
+    "meta-head-tags",
+    "prerender",
+    "prefetching-preloading",
+    "tree-shaking",
+    "tracing-long-tasks",
+    "event-performance",
+    "micro-frontend-performance"
   ]
 }
