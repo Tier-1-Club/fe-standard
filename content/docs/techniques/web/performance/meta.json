@@ -12,7 +12,6 @@
     "mornitering-measurement",
     "event-performance",
     "compression",
-    "algorithms",
     "server-state-management",
     "hybrid-state-management-strategies",
     "javascript-optimization",
@@ -34,6 +33,7 @@
     "http-cache",
     "meta-head-tags",
     "prefetching-preloading",
+    "cdn",
     "---Web API---",
     "web-workers",
     "web-assembly",
@@ -43,6 +43,7 @@
     "isolation-css-stacking-context",
     "css-custom-properties",
     "css-in-animation",
+    "pure-css",
     "---Techniques---",
     "list-optimization",
     "table-optimization",
@@ -57,7 +58,15 @@
     "selective-hyration",
     "off-screen-rendering",
     "prerendering",
+    "---Algorithms---",
+    "lru",
+    "virtual-list",
+    "trie-for-autocomplete",
+    "priority-queue-for-task-scheduling",
+    "bloom-filter-for-quick-lookups",
+    "doubly-linked-list",
     "---Microfrontend---",
-    "micro-frontend-performance"
+    "event-bus-communications",
+    "share-dependencies"
   ]
 }
