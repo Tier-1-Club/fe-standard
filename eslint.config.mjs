@@ -1,3 +1,4 @@
+import { includeIgnoreFile } from "@eslint/compat"
 import eslint from "@eslint/js"
 import tsParser from "@typescript-eslint/parser"
 import pluginVitest from "@vitest/eslint-plugin"
@@ -8,27 +9,18 @@ import react from "eslint-plugin-react"
 import simpleImportSort from "eslint-plugin-simple-import-sort"
 import sonarQubeJs from "eslint-plugin-sonarjs"
 import unicorn from "eslint-plugin-unicorn"
+import path from "node:path"
+import { fileURLToPath } from "node:url"
 import typescriptEslint from "typescript-eslint"
 
-const ignores = [
-  "**/node_modules",
-  "**/dist",
-  ".source/*",
-  ".next/*",
-  "**/out",
-  "**/.eslintrc.js",
-  "**/public",
-  "**/.coverage",
-  "**/*.d.ts",
-  ".github/*",
-  ".eslintcache",
-  "next.config.mjs",
-  "postcss.config.js",
-  "tailwind.config.js",
-  "**/eslint.config.mjs"
-]
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const gitignorePath = path.resolve(__dirname, ".gitignore")
+const needCheckingFiles = ["app/**/*.ts", "app/**/*.tsx", "shared/**/*.ts", "shared/**/*.tsx"]
+const integrationTestFiles = ["e2e/**/*.{test,spec}.{ts,tsx}"]
 
 export default typescriptEslint.config(
+  includeIgnoreFile(gitignorePath),
   {
     settings: {
       react: {
@@ -43,11 +35,9 @@ export default typescriptEslint.config(
         tsconfigRootDir: import.meta.dirname
       }
     },
-    files: ["app/**/*.ts", "app/**/*.tsx", "shared/**/*.ts", "shared/**/*.tsx"],
-    ignores
+    files: needCheckingFiles
   },
   {
-    ignores,
     plugins: {
       "@typescript-eslint": typescriptEslint.plugin,
       react,
@@ -201,17 +191,15 @@ export default typescriptEslint.config(
       "simple-import-sort/imports": "error",
       "simple-import-sort/exports": "error"
     },
-    files: ["app/**/*.ts", "app/**/*.tsx", "shared/**/*.ts", "shared/**/*.tsx"]
+    files: needCheckingFiles
   },
   {
-    ignores,
     ...pluginVitest.configs.recommended,
-    files: ["app/**/__tests__/*", "shared/**/__tests__/*", "modules/**/__tests__/*"]
+    files: needCheckingFiles
   },
   {
-    ignores,
     ...pluginPlaywright.configs["flat/recommended"],
-    files: ["e2e/**/*.{test,spec}.{js,ts,jsx,tsx}"]
+    files: integrationTestFiles
   },
   // markdown.configs.recommended,
   oxlint.configs["flat/recommended"]
