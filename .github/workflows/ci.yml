@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    tags:
+      - "**"
+  pull_request:
+    types:
+      [
+        opened,
+        synchronize,
+        reopened,
+        labeled,
+        review_requested,
+        auto_merge_enabled,
+        ready_for_review,
+        review_request_removed,
+        review_requested,
+        assigned
+      ]
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        node-version: [22.x]
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Lint code
+        run: bun run lint
