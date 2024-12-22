@@ -25,7 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     ...(await Promise.all(
       source.getPages().map(async page => {
-        const { lastModified } = page.data
+        const { lastModified } = await page.data.load()
         return {
           url: url(page.url),
           lastModified: lastModified ? new Date(lastModified) : undefined,
