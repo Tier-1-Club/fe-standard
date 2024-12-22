@@ -1,12 +1,8 @@
 name: tier1club
 
 services:
-  frontend:
-    env_file: .env
-    build:
-      context: .
-      tags:
-        - "registry.gitlab.com/tier1club/frontend:0.0.1"
+  handbook:
+    image: registry.gitlab.com/tier1club/tier1-frontend:0.0.1
     network_mode: bridge
     environment:
       - NODE_ENV=production

@@ -1,0 +1,17 @@
+.git
+.idea
+.github
+.husky
+.next
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.vscode
+node_modules
+*.log
+.output
+.DS_Store
+.vercel
+report/html
